@@ -1,0 +1,48 @@
+% ============================================================================ %
+\NeedsTeXFormat{LaTeX2e}%
+\ProvidesPackage{dissertationx}[%
+    2018/02/26 - %
+    Dissertation Publishing Tools %
+    v2.0 - %
+    LaTeX Custom Package %
+    by Elan H. Herrera%
+]%
+% ============================================================================ %
+\RequirePackage{projectx}%
+% ============================================================================ %
+\RequirePackage{dissertationx-layout}%
+\RequirePackage{dissertationx-floats}%
+\RequirePackage{dissertationx-variables}%
+\RequirePackage{dissertationx-front-matter}%
+\RequirePackage{dissertationx-approval}%
+\RequirePackage{dissertationx-end-matter}%
+% ============================================================================ %
+\RequirePackage{hyperref}%
+\RequirePackage{IEEEtrantools}%
+% ============================================================================ %
+\LoadGlossaryFile{chemicals.tex}%
+\LoadGlossaryFile{reactions.tex}%
+\LoadGlossaryFile{terms.tex}%
+% ============================================================================ %
+\LoadReferenceFile{default.bib}%
+\LoadReferenceFile{articles.bib}%
+\LoadReferenceFile{patents.bib}%
+\LoadReferenceFile{reports.bib}%
+\LoadReferenceFile{standards.bib}%
+\LoadReferenceFile{textbooks.bib}%
+\LoadReferenceFile{theses.bib}%
+\LoadReferenceFile{websites.bib}%
+% ============================================================================ %
+\LoadInfoFile{user-data.tex}%
+\LoadInfoFile{committee-data.tex}%
+% ============================================================================ %
+\hypersetup{%
+    colorlinks={true},%
+    linkcolor={black},%
+    citecolor={cyan},%
+    filecolor={magenta},%
+    urlcolor={blue},%
+}%
+% ============================================================================ %
+\renewcommand{\contentsname}{Table of Contents}%
+% ============================================================================ %

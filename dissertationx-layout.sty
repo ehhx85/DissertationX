@@ -1,0 +1,48 @@
+% ============================================================================ %
+\NeedsTeXFormat{LaTeX2e}%
+\ProvidesPackage{dissertationx-layout}[%
+    2018/02/26 - %
+    Dissertation Publishing Tools %
+    v1.1 - %
+    LaTeX Custom Package %
+    by Elan H. Herrera%
+]%
+% ============================================================================ %
+\RequirePackage{projectx}%
+% ============================================================================ %
+\renewcommand{\baselinestretch}{1.50}%
+% ============================================================================ %
+\raggedbottom% fixes the underfull \vbox badness warnings (?)
+% ============================================================================ %
+\geometry{%
+    portrait,%    
+    paperheight={11.0in},%
+    paperwidth={8.5in},%
+    vmargin={1.00in},%
+    hmargin={1.00in},%
+    heightrounded,%
+    %showframe,%
+}%
+% ============================================================================ %
+\fancypagestyle{plain}{%
+    \fancyhf{}%
+    \fancyfoot[LE]{\thepage}%
+    \fancyfoot[RO]{\thepage}%
+    \renewcommand{\headrulewidth}{0.0pt}%
+    \renewcommand{\footrulewidth}{0.0pt}%
+}%
+% ============================================================================ %
+\fancyhf{}%
+% ============================================================================ %
+\fancyhead[LE]{\textbf{\thepage\quad\nouppercase{\leftmark}}}%
+% ============================================================================ %
+\fancyhead[RO]{\textbf{\nouppercase{\rightmark}\quad\thepage}}%
+% ============================================================================ %
+\renewcommand{\headrulewidth}{0.40pt}%
+% ============================================================================ %
+\renewcommand{\footrulewidth}{0.0pt}%
+% ============================================================================ %
+\pagestyle{fancy}%
+% ============================================================================ %
+\setlength\bibitemsep{1.5ex}%
+% ============================================================================ %

@@ -1,0 +1,33 @@
+% ============================================================================ %
+\NeedsTeXFormat{LaTeX2e}%
+\ProvidesPackage{dissertationx-end-matter}[%
+    2017/09/30 - %
+    Dissertation Publishing Tools %
+    v1.0 - %
+    LaTeX Package Component %
+    by Elan H. Herrera%
+]%
+% ============================================================================ %
+\RequirePackage{dissertationx-variables}%
+% ============================================================================ %
+\newcommand{\GetCommitteeMember}[1]{%
+    \IfStrEqCase{#1}{%
+        {1}{\@CommitteeMemberAName}%
+        {2}{\@CommitteeMemberBName}%
+        {3}{\@CommitteeMemberCName}%
+        {4}{\@CommitteeMemberDName}%
+        {5}{\@CommitteeMemberEName}%
+    }[]%
+}%
+% ============================================================================ %
+\newcommand{\SectionCoverPage}[1]{%
+    \thispagestyle{empty}%
+    \begin{center}%
+	    \vspace*{\fill}%
+	    \Huge\textbf{#1}%
+	    \vspace{1.50in}%
+	    \vspace*{\fill}%
+    \end{center}%
+    \clearpage{\pagestyle{empty}\cleardoublepage}%
+}%
+% ============================================================================ %

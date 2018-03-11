@@ -1,0 +1,49 @@
+% ============================================================================ %
+\NeedsTeXFormat{LaTeX2e}%
+\ProvidesPackage{dissertationx-floats}[%
+    2018/02/26 - %
+    Dissertation Publishing Tools %
+    v1.1 - %
+    LaTeX Custom Package %
+    by Elan H. Herrera%
+]%
+% ============================================================================ %
+\RequirePackage{projectx}%
+% ============================================================================ %
+\renewcommand{\heavyrulewidth}{0.1em}%
+% ============================================================================ %
+\tabulinesep=0.50em%
+% ============================================================================ %
+\captionsetup{%
+    format = {hang},%
+    justification = {raggedright},%
+    labelsep = {period},%
+    singlelinecheck = {false},%
+}%
+% ============================================================================ %
+\captionsetup[table]{%
+    name = {Table},%
+    position = {above},%
+    textformat = {period},%
+}%
+% ============================================================================ %
+\captionsetup[figure]{%
+    name = {Figure},%    
+    position = {below},%
+    textformat = {period},%
+}%
+% ============================================================================ %
+\captionsetup[subfigure]{%
+    justification = {centering},%
+    textformat = {simple},%
+}%
+% ============================================================================ %
+\captionsetup[supplement]{%
+    name = {Supplement},%
+    position = {below},%
+    textformat = {simple},%
+    font = {scriptsize},%
+    aboveskip = {0pt},%
+    belowskip = {0pt},%
+}%
+% ============================================================================ %

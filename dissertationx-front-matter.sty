@@ -1,0 +1,83 @@
+% ============================================================================ %
+\NeedsTeXFormat{LaTeX2e}%
+\ProvidesPackage{dissertationx-front-matter}[%
+    2017/09/29 - %
+    Dissertation Publishing Tools %
+    v1.0 - %
+    LaTeX Package Component %
+    by Elan H. Herrera%
+]%
+% ============================================================================ %
+\RequirePackage{dissertationx-variables}%
+\RequirePackage{datetime}%
+% ============================================================================ %
+\newcommand{\TitlePageHeader}{%
+    \begin{spacing}{2}%
+        \textbf{%
+            {\Huge\@DocumentTitle}\\%
+            \vspace{1em}%
+            {\LARGE\@DocumentSubTitle}\\% 
+        }%
+    \end{spacing}
+}%
+% ============================================================================ %
+\newcommand{\TitlePageCenter}[1]{%
+    {\large%
+        A \@DocumentType\ Presented for the\\%
+        \@DegreeType\\%
+        Degree\\%
+        \rule{#1}{0.5pt}\\%        
+        \vspace{0.75em}%
+        \@UniversityName , %
+        \@UniversityCity\\%
+    }%
+}%
+% ============================================================================ %
+\newcommand{\TitlePageFooter}{%
+    \textbf{\Large\@DocumentAuthor}\\%
+    \vspace{1em}%
+    {\Large\monthname[\@DegreeMonth]\ \@DegreeYear}%
+}%
+% ============================================================================ %
+\newcommand{\CopyrightLine}{%
+    {\large%
+        Copyright \copyright\ \@DegreeYear\ by \@DocumentAuthor\\%
+        All rights reserved.%
+    }%
+}%
+% ============================================================================ %
+\newcommand{\BuildPersonalQuote}[2]{%
+    \begin{center}    
+        \textit{%
+            ``#1"\\%
+            \vspace{0.5em}%
+            \hfill%
+            \-- #2\\%
+        }%
+    \end{center}
+}%
+% ============================================================================ %
+\newcommand{\ResearchFundingBlock}[1]{%
+    \fbox{%
+        \begin{minipage}{0.95\linewidth}%
+            \centering%
+            \setstretch{0.75}%
+            {\scriptsize #1}%    
+        \end{minipage}%
+    }%
+}%
+% ============================================================================ %
+\newcommand{\AddSupplementaryFilesHeader}{%
+    \addtocontents{los}{%
+        \SupplementaryFilesHeader%
+        \par%
+        \vspace*{5ex}%
+    }%
+}%
+% ============================================================================ %
+\newcommand{\SupplementaryFilesHeader}{%
+    The following attachments are available online as a companion to the digital manuscript.
+    The attachment files are freely open to downloaded for reference.
+    Any usage or reproduction must follow all guidelines set forth by the \@UniversityName.
+}%
+% ============================================================================ %

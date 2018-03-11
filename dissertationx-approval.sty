@@ -1,0 +1,151 @@
+% ============================================================================ %
+\NeedsTeXFormat{LaTeX2e}%
+\ProvidesPackage{dissertationx-approval}[%
+    2017/09/29 - %
+    Dissertation Publishing Tools %
+    v1.0 - %
+    LaTeX Package Component %
+    by Elan H. Herrera%
+]%
+% ============================================================================ %
+\RequirePackage{dissertationx-variables}%
+\RequirePackage{xparse}%
+\RequirePackage{xstring}%
+% ============================================================================ %
+\newcommand{\ApprovalHeaderWritten}{%
+    \@ApprovalHeader{electronic}%
+}
+% ============================================================================ %
+\newcommand{\ApprovalHeaderElectronic}{%
+    \@ApprovalHeader{final electronic}%
+}
+% ============================================================================ %
+\newcommand{\@ApprovalHeader}[1]{%
+    \begin{spacing}{1.00}    
+        \noindent%
+        \textbf{To the Graduate Council:}%
+        \vspace{1em}\\%        
+        \noindent%
+        I am submitting herewith a \MakeLowercase{\@DocumentType}\ written by \@DocumentAuthor\ entitled ``\@DocumentTitle : \@DocumentSubTitle ''. 
+        I have examined the #1 copy of this \MakeLowercase{\@DocumentType}\ for form and content and recommend that it be accepted in partial fulfillment of the requirements for the degree of \@DegreeType , with a major in \@DegreeMajor .
+    \end{spacing}
+}%
+% ============================================================================ %
+\newcommand{\@ApprovalSignatureWidth}{2.50in}%
+% ============================================================================ %
+\newcommand{\AddWrittenSignature}[1]{%
+    \@SelectCommitteeMember{#1}%
+    \@CommitteeMemberSignatureWritten%
+}%
+% ============================================================================ %
+\newcommand{\AddElectronicSignature}[1]{%
+    \@SelectCommitteeMember{#1}%
+    \@CommitteeMemberSignatureElectronic%
+}%
+% ============================================================================ %
+\newcommand{\@SelectCommitteeMember}[1]{% TODO : update with a committee member set function
+    \IfStrEqCase{#1}{%
+        {1}{\@SetCommitteeMember{\@CommitteeMemberAName}{\@CommitteeMemberATitle}{\@CommitteeMemberADepartment}\hfill}%
+        {2}{\@SetCommitteeMember{\@CommitteeMemberBName}{\@CommitteeMemberBTitle}{\@CommitteeMemberBDepartment}}%
+        {3}{\@SetCommitteeMember{\@CommitteeMemberCName}{\@CommitteeMemberCTitle}{\@CommitteeMemberCDepartment}}%
+        {4}{\@SetCommitteeMember{\@CommitteeMemberDName}{\@CommitteeMemberDTitle}{\@CommitteeMemberDDepartment}}%
+        {5}{\@SetCommitteeMember{\@CommitteeMemberEName}{\@CommitteeMemberETitle}{\@CommitteeMemberEDepartment}}%
+    }[]%
+}%
+% ============================================================================ %
+\newcommand{\@SetCommitteeMember}[3]{%
+    \CommitteeMemberName{#1}%
+    \CommitteeMemberTitle{#2}%
+    \CommitteeMemberDepartment{#3}%
+}%
+% ============================================================================ %
+\newcommand{\@CommitteeMemberSignatureWritten}{
+    \noindent%
+    \begin{minipage}[t]{\@ApprovalSignatureWidth}
+        \begin{spacing}{1.0}
+            \vspace{18pt}%
+            \underline{\hspace{\@ApprovalSignatureWidth}}\\[4pt]%
+	        \textbf{\@CommitteeMemberName}\\%
+	        \footnotesize\textit{\@CommitteeMemberTitle}\\%
+	        \footnotesize\textit{\@CommitteeMemberDepartment}%
+	    \end{spacing}
+    \end{minipage}
+    \par%
+}%
+% ============================================================================ %
+\newcommand{\@CommitteeMemberSignatureElectronic}{%
+    \noindent%
+    \begin{minipage}[t]{\@ApprovalSignatureWidth}
+        \begin{spacing}{1.0}
+            \vspace{12pt}%
+	        \textbf{\@CommitteeMemberName}\\[-4pt]%
+            \underline{\hspace{\@ApprovalSignatureWidth}}\\[4pt]%
+	        \footnotesize\textit{\@CommitteeMemberTitle}\\%
+	        \footnotesize\textit{\@CommitteeMemberDepartment}%
+	    \end{spacing}
+    \end{minipage}
+    \par%
+}%
+% ============================================================================ %
+\newcommand{\GradSchoolWrittenSignature}{%
+    \noindent%
+    \hfill%
+    \begin{minipage}[t]{\@ApprovalSignatureWidth}
+        \begin{spacing}{1.0}
+            \vspace{18pt}%
+            \underline{\hspace{\@ApprovalSignatureWidth}}\\[4pt]%
+	        \textbf{\@GraduateSchoolDean}\\%
+	        \small{%
+	            Vice Provost and\\%
+	            Dean of the Graduate School%
+	        }%
+	    \end{spacing}
+    \end{minipage}
+    \par%
+}%
+% ============================================================================ %
+\newcommand{\GradSchoolElectronicSignature}{%
+    \noindent%
+    \hfill%
+    \begin{minipage}[t]{\@ApprovalSignatureWidth}
+        \begin{spacing}{1.0}
+            \vspace{6pt}%
+	        \textbf{\@GraduateSchoolDean}\\[-4pt]%
+            \underline{\hspace{\@ApprovalSignatureWidth}}\\[4pt]%
+	        \small{%
+	            Vice Provost and\\%
+	            Dean of the Graduate School%
+	        }%
+	    \end{spacing}
+    \end{minipage}
+    \par%
+}%
+% ============================================================================ %
+\newcommand{\ApprovalRecommendationBlock}{%
+    \noindent%
+    \begin{minipage}[t]{\@ApprovalSignatureWidth}
+        \begin{spacing}{1.00}
+            We have read this \MakeLowercase{\@DocumentType}\\%
+            and recommend its acceptance:%
+        \end{spacing}
+    \end{minipage}
+    \par%
+}%
+% ============================================================================ %
+\newcommand{\ApprovalAcceptanceLine}{%
+    \noindent%
+    \hfill%
+    \begin{minipage}[t]{\@ApprovalSignatureWidth}
+        Accepted for the Council:%
+    \end{minipage}
+    \par%
+}%
+% ============================================================================ %
+\newcommand{\ApprovalOnFile}{%
+    \begin{center}
+        {\small%
+            (Original signatures are on file with official student records.)%
+        }%
+    \end{center}
+}%
+% ============================================================================ %
