@@ -3,7 +3,7 @@
 \ProvidesPackage{dissertationx-layout}[%
     2018/02/26 - %
     Dissertation Publishing Tools %
-    v1.1 - %
+    v2.1 - %
     LaTeX Custom Package %
     by Elan H. Herrera%
 ]%
@@ -24,25 +24,29 @@
     %showframe,%
 }%
 % ============================================================================ %
-\fancypagestyle{plain}{%
-    \fancyhf{}%
-    \fancyfoot[LE]{\thepage}%
-    \fancyfoot[RO]{\thepage}%
-    \renewcommand{\headrulewidth}{0.0pt}%
-    \renewcommand{\footrulewidth}{0.0pt}%
-}%
+% TODO : turn all the fancy headers into a switchable command in projectx
 % ============================================================================ %
-\fancyhf{}%
+%\fancypagestyle{plain}{%
+%    \fancyhf{}%
+%    \fancyfoot[LE]{\thepage}%
+%    \fancyfoot[RO]{\thepage}%
+%    \renewcommand{\headrulewidth}{0.0pt}%
+%    \renewcommand{\footrulewidth}{0.0pt}%
+%}%
 % ============================================================================ %
-\fancyhead[LE]{\textbf{\thepage\quad\nouppercase{\leftmark}}}%
+%\fancyhf{}%
 % ============================================================================ %
-\fancyhead[RO]{\textbf{\nouppercase{\rightmark}\quad\thepage}}%
+%\fancyhead[LE]{\textbf{\thepage\quad\nouppercase{\leftmark}}}%
 % ============================================================================ %
-\renewcommand{\headrulewidth}{0.40pt}%
+%\fancyhead[RO]{\textbf{\nouppercase{\rightmark}\quad\thepage}}%
 % ============================================================================ %
-\renewcommand{\footrulewidth}{0.0pt}%
+%\renewcommand{\headrulewidth}{0.40pt}%
 % ============================================================================ %
-\pagestyle{fancy}%
+%\renewcommand{\footrulewidth}{0.0pt}%
+% ============================================================================ %
+%\pagestyle{fancy}%
+% ============================================================================ %
+%\linenumbers% turn off after editing
 % ============================================================================ %
 \setlength\bibitemsep{1.5ex}%
 % ============================================================================ %

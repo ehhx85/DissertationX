@@ -13,6 +13,7 @@
 \RequirePackage{dissertationx-layout}%
 \RequirePackage{dissertationx-floats}%
 \RequirePackage{dissertationx-variables}%
+\RequirePackage{dissertationx-references}%
 \RequirePackage{dissertationx-front-matter}%
 \RequirePackage{dissertationx-approval}%
 \RequirePackage{dissertationx-end-matter}%
@@ -20,18 +21,18 @@
 \RequirePackage{hyperref}%
 \RequirePackage{IEEEtrantools}%
 % ============================================================================ %
-\LoadGlossaryFile{chemicals.tex}%
-\LoadGlossaryFile{reactions.tex}%
-\LoadGlossaryFile{terms.tex}%
+\DeclareOption{shortRefList}{%
+    \renewcommand{\LoadReferenceFiles}{\LoadReferenceFilesShort}%
+}%
 % ============================================================================ %
-\LoadReferenceFile{default.bib}%
-\LoadReferenceFile{articles.bib}%
-\LoadReferenceFile{patents.bib}%
-\LoadReferenceFile{reports.bib}%
-\LoadReferenceFile{standards.bib}%
-\LoadReferenceFile{textbooks.bib}%
-\LoadReferenceFile{theses.bib}%
-\LoadReferenceFile{websites.bib}%
+\ProcessOptions\relax%
+% ============================================================================ %
+\LoadGlossaryFile{master.tex}%
+%\LoadGlossaryFile{chemicals.tex}%
+%\LoadGlossaryFile{reactions.tex}%
+%\LoadGlossaryFile{terms.tex}%
+% ============================================================================ %
+\LoadReferenceFiles%
 % ============================================================================ %
 \LoadInfoFile{user-data.tex}%
 \LoadInfoFile{committee-data.tex}%

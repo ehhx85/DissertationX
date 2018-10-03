@@ -21,13 +21,15 @@
 }%
 % ============================================================================ %
 \newcommand{\SectionCoverPage}[1]{%
-    \thispagestyle{empty}%
+    \newpage% remove if using fancy header
+    %\thispagestyle{empty}% used with fancy header
     \begin{center}%
 	    \vspace*{\fill}%
 	    \Huge\textbf{#1}%
 	    \vspace{1.50in}%
 	    \vspace*{\fill}%
     \end{center}%
-    \clearpage{\pagestyle{empty}\cleardoublepage}%
+    \addcontentsline{toc}{chapter}{#1}%
+    %\clearpage{\pagestyle{empty}\cleardoublepage}% used with fancy header (make into optional command?)
 }%
 % ============================================================================ %

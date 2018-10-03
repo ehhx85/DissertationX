@@ -1,0 +1,36 @@
+% ============================================================================ %
+\NeedsTeXFormat{LaTeX2e}%
+\ProvidesPackage{dissertationx-references}[%
+    2018/05/08 - %
+    Dissertation Publishing Tools %
+    v2.0 - %
+    LaTeX Custom Package %
+    by Elan H. Herrera%
+]%
+% ============================================================================ %
+\RequirePackage{projectx}%
+% ============================================================================ %
+\newcommand{\LoadReferenceFiles}{%
+    \LoadReferenceFile{default.bib}%
+    \LoadReferenceFile{articles.bib}%
+    \LoadReferenceFile{nuclear_data_sheets.bib}%
+    \LoadReferenceFile{patents.bib}%
+    \LoadReferenceFile{reports.bib}%
+    \LoadReferenceFile{standards.bib}%
+    \LoadReferenceFile{textbooks.bib}%
+    \LoadReferenceFile{theses.bib}%
+    \LoadReferenceFile{websites.bib}%
+}%
+% ============================================================================ %
+\newcommand{\LoadReferenceFilesShort}{%
+    \LoadReferenceFile{default.bib}%
+    \LoadReferenceFile{my_dissertation_articles.bib}%
+    \LoadReferenceFile{my_dissertation_nuclear_data_sheets.bib}%
+    \LoadReferenceFile{my_dissertation_patents.bib}%
+    \LoadReferenceFile{my_dissertation_reports.bib}%
+    \LoadReferenceFile{my_dissertation_standards.bib}%
+    \LoadReferenceFile{my_dissertation_textbooks.bib}%
+    \LoadReferenceFile{my_dissertation_theses.bib}%
+    \LoadReferenceFile{my_dissertation_websites.bib}%
+}%
+% ============================================================================ %
